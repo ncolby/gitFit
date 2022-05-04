@@ -1,4 +1,31 @@
-div {
+#bmi {
   border: 2px red solid;
   background-color: rgb(116, 207, 207);
+  width: 27%;
+  margin-left: 60%;
+  margin-top: 3%;
+  border-radius: 2%;
+  background-color: rgb(113, 180, 180);
+  viewport-fit: 1vh;
 }
+
+#audio {
+  width: 27%;
+  margin-left: 60%;
+}
+
+img {
+  height: 190px;
+  margin-left: 2%;
+  margin-bottom: 3%;
+  width: 350px;
+}
+/* button {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  text-decoration: solid;
+  margin: 4px 2px;
+  cursor: pointer;
+} */
