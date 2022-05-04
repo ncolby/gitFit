@@ -39,7 +39,7 @@ server.get("/", (req, res) => {
     return res.sendFile(path.join(__dirname, "public/main.html"));
 });
 
-server.use("/users", express.static("./users"));
+server.use("/users", requiresAuth, express.static("./users"));
 
 client.connect().then(async () => {
     server.listen(PORT, () => {
