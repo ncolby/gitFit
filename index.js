@@ -26,7 +26,7 @@ const config = {
 server.use(auth(config));
 
 server.get("/profile", requiresAuth(), (req, res) => {
-    res.send(JSON.stringify(req.oidc.user));
+    res.send(req.oidc.user);
 });
 // * End of Auth0 implementation
 
