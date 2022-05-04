@@ -4,7 +4,8 @@
         "dotenv": "^16.0.0",
         "express": "^4.18.1",
         "express-openid-connect": "^2.7.2",
-        "mongoose": "^6.3.2"
+        "mongoose": "^6.3.2",
+        "path": "^0.12.7"
     },
     "name": "gitfit",
     "description": "JaMMiN it Up - Team Proj",
