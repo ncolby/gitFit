@@ -7,7 +7,8 @@ const server = express();
 const client = new MongoClient(process.env.DB_CONNECTION_URL);
 const PORT = 3000;
 
-const { auth } = require("express-openid-connect");
+// * Start of Auth0 implementation
+const { auth, requiresAuth } = require("express-openid-connect");
 
 const config = {
     authRequired: false,
@@ -20,6 +21,11 @@ const config = {
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 server.use(auth(config));
+
+server.get("/profile", requiresAuth(), (req, res) => {
+    res.send(JSON.stringify(req.oidc.user));
+});
+// * End of Auth0 implementation
 
 // req.isAuthenticated is provided from the auth router
 server.get("/", (req, res) => {
