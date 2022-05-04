@@ -1,56 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 
 body {
     background-image: url("https://th.bing.com/th/id/R.19b1555bd877971ee297eaa73949b632?rik=gHoo%2bCnm%2f8nvLA&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fc%2f7%2f1%2f53580.jpg&ehk=K04WStSzRf3wpq3BfGWnGuce6Ixq%2bUZojYVPSrF2S70%3d&risl=&pid=ImgRaw&r=0");
     background-position: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     top: 0px;
     background-size:auto;
+    
 }
 
 .first-section {
     top: 0px;
     width: 100%;
-    height: 500px;
-           
-}
+    height: 550px;
+}    
 
 #text-first {
     color: white;
-    text-align: justify;
     font-family: Montserrat;
-    font-size: large;
-    position: relative;
-    top: 50px;
+    font-size: 18px;
+    text-align:justify;
+    top:40px;
     margin-left: 20px;
     margin-right: 600px;
-    text-align: center;
-      
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5% 5% 5% 5%;
 }
 
 #text-first-continuation {
     color: white;
     text-align: justify;
     font-family: Montserrat;
-    font-size: large;
+    font-size: 18px;
     position: relative;
     top: 150px;
     margin-left: 600px;
     margin-right: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
     text-align: center;
-
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5% 5% 5% 5%;
 }
 
 .second-section{
     background-image: url("https://wallpapertag.com/wallpaper/full/7/0/4/63855-white-background-hd-1920x1080-download-free.jpg");
+    font-weight: 600;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 1000px;
-    margin: 0px;
-    border: 0px;
-    padding: 0px;
+    height: 800px;
+    border-radius:  0%  50% 0%  50%;
+}
+
+#text-second {
+    color: black;
+    text-align: justify;
+    font-family: Montserrat;
+    font-size: 18px;
+    position: relative;
+    top: 0px;
+    left: 550px;
+    margin-left: 20px;
+    margin-right: 600px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5% 5% 5% 5%;
 }
 
 .third-section {
@@ -59,7 +80,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 400px;
+    height: 700px;
     margin: 0px;
     border: 0px;
     padding: 0px;
@@ -69,17 +90,20 @@ body {
     color: white;
     text-align: justify;
     font-family: Montserrat;
-    font-size:large;
+    font-size:18px;
     position: relative;
-    top: 100px;
-    margin-left: 150px;
-    margin-right: 150px;
+    top: 0px;
+    
+    margin-left: 500px;
+    margin-right: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
     text-align: center;
-      
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5% 5% 5% 5%; 
 }
 
 /* NAV BAR */
-
 *{
     margin: 0;
     padding: 0;
@@ -206,4 +230,234 @@ header {
     text-decoration: none;
 }
 
-/* text black outline */
+#text-first, #text-first-continuation,  #text-third, h1, h2 {
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+
+/* CARDS SECOND SECTION */
+.second-section {
+    margin: 0;
+    padding: 0;
+    display: relative;
+    justify-content:stretch;
+    align-items:stretch;
+    font-family: "Montserrat", cursive;
+    top: 300px;
+    left: 300px;
+    min-height: 100vh;
+    background-color: #a9c9ff;
+}
+
+.container {
+      
+    display:grid;
+    grid-template-areas: 'myArea myArea .';
+    grid-template-columns: repeat(2,10px);
+    grid-area:span;
+    grid-gap: 20px;
+    padding: 100px;
+}  
+
+.card {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    left: 10px;
+    margin: 0 auto;
+    background: #000;
+    border-radius: 15px;
+    padding-left: 0;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    font-family: Montserrat;
+} 
+
+.face {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.face1 {
+    box-sizing: border-box;
+    padding: 20px;
+    
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+  
+.firstCard {
+    font-family: Montserrat;
+    font-size: 12px;
+    text-align: center;
+    background-color: #090909;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+.secondCard {
+    font-family: Montserrat;
+    font-size: 12px;
+    text-align: center;
+    background-color: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.face2 {
+    transition: 0.5s;
+}
+
+h2 {
+    font-family: Montserrat;
+    margin: 0;
+    padding: 0;
+    font-size: 1;
+    color: black;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+  
+.card:hover .face.face2 {
+    height: 60px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+.card:nth-child(1) .face.face2 {
+    background-image: linear-gradient(
+    40deg,
+          #d9c6ab 0%,
+          #ffa64d 45%,
+          #ff9711 100%
+    );
+    border-radius: 5px;
+}
+  
+.card:nth-child(2) .face.face2 {
+    background-image: linear-gradient(
+    40deg,
+          #ff9711 0%,
+          #eca257 45%,
+          #d9c6ab 100%
+    );
+    border-radius: 5px;
+}
+     
+    /*FOOTER */
+section{
+    text-align:center;
+}
+
+.footer #button{
+    width:35px;
+    height: 35px;px;
+    border: #ff9711 12px solid;
+    border-radius:35px;
+    margin:0 auto;
+    position:relative;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.footer #button:hover{
+    width:35px;
+    height:35px;
+    border: #FF9711 12px solid;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    position:relative;
+}
+
+.footer {
+    bottom:0;
+    left:0;
+    position:fixed;
+    width: 100%;
+    height: 4.5em;
+    overflow:hidden;
+    margin:0 auto;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index:999;
+}
+
+.footer:hover {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    height: 12em;
+}
+
+.footer #container{
+    margin-top:5px;
+    width:100%;
+    height:100%;
+    position:relative;
+    top:0;
+    left:0;
+    background: #ff9711;
+}
+
+.footer #cont{
+    position:relative;
+    top:-45px;
+    right:190px;
+    width:150px;
+    height:auto;
+    margin:0 auto;
+}
+
+.footer_center{
+    width:500px;
+    float:left;
+    text-align:center;
+}
+
+.footer h3{
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-weight: 100;
+    margin-top:70px;
+    margin-left:40px;
+}
+  
+      /* BMI CALCULATOR */
+
+.containerBMI, .flex-container{
+    font-family: Montserrat;
+    font-size: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: center;
+    align-content: center;
+    left: 100px;
+    top: 100px;
+    box-shadow: 10px white;
+    border: 2px #FF9711 solid;
+    background-color: #ff9711
+}

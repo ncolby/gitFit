@@ -11,7 +11,6 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -31,60 +30,58 @@
     <title>GetFit</title>
   </head>
 
+
   <body>
     <header>
       <div class="wrapper">
-        <!-- Brand Image -->
-        <a href="#" class="logo"
+          <a href="#" class="logo"
           ><img src="./documents/logo.jpg" width="100" height="100" alt=""
-        /></a>
-        <i class=""></i>
-        <!-- Navbar -->
-        <nav class="nav-menus">
-          <li>
-            <a href="#"><i class="fas fa-home"></i> Home</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-align-left"></i> About</a>
-          </li>
-          <li class="sub-menus">
-            <a href="#"><i class="fas fa-list-ul"></i> Workouts</a>
+          /></a>
+          <nav class="nav-menus">
+            <li>
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+            <a href="#height"><i class="fas fa-align-left"></i> Calculate your BMI</a>
+            </li>
+            <li class="sub-menus"><a href="#"><i class="fas fa-list-ul"></i> Free workout Plans</a>
             <ul>
-              <li>
-                <a href="#"><i class="fas fa-female"></i>Women</a>
-              </li>
-              <li>
-                <a href="#"><i class="fas fa-male"></i> Men</a>
-              </li>
-              <li>
-                <a href="#"><i class="far fa-building"></i>AtHome</a>
-              </li>
+                <li>
+                <a href="./documents/womensprogram.pdf"><i class="fas fa-female"></i>Women</a>
+                </li>
+                <li>
+                <a href="./documents/mensprogram.pdf"><i class="fas fa-male"></i> Men</a>
+                </li>
+                <li>
+                <a href="./documents/athomeprogram.pdf"><i class="far fa-building"></i>AtHome</a>
+                </li>
             </ul>
-          </li>
+            </li>
           <li class="sub-menus">
-            <a href="#"><i class="fas fa-users"></i> Team</a>
-            <ul>
+          <a href="#"><i class="fas fa-users"></i>Team</a>
+          <ul>
               <li>
-                <a href="#"><i class="fas fa-paw"></i> Marshall "The Beast"</a>
+              <a href="#"><i class="fas fa-dragon"></i>Marshall "The Dragon"</a>
               </li>
               <li>
-                <a href="#"><i class="fas fa-cat"></i> Mannie "The Cat Noir</a>
+              <a href="#"><i class="fas fa-cat"></i>Mannie "The Cat Noir</a>
               </li>
               <li>
-                <a href="#"><i class="fa fa-gamepad"></i> Nikko "The Gamer"</a>
+              <a href="#"><i class="fa fa-gamepad"></i>Nikko "The Gamer"</a>
               </li>
               <li>
-                <a href="#"><i class="fas fa-dragon"></i> Jose "The Dragon" </a>
+              <a href="#"><i class="fas fa-paw"></i>Jose "The Straight Dog"</a>
               </li>
-            </ul>
+              </ul>
           </li>
           <li>
-            <a href="#"><i class="fas fa-phone-alt"></i> Contact</a>
+          <a href="#result"><i class="fa fa-mobile"></i> Contact</a>
           </li>
         </nav>
-      </div>
+        </div>
     </header>
-    
+
+
     <section class="first-section">
       <p id="text-first">
         Exercising regularly, every day if possible, is the single most
@@ -93,25 +90,81 @@
         term, it reduces the risk of heart disease, stroke, diabetes, dementia,
         depression, and many cancers.
       </p>
-
       <p id="text-first-continuation">
         Whether you were once much more physically active or have never been one
         to exercise regularly, now is a great time to start an exercise and
         fitness regimen. Getting and staying in shape is just as important for
         seniors as it is for younger people.
       </p>
+    </section>
 
-      <!-- <p id="text-first">
+
+    <section class="second-section">
+      <div class="container">
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <h2 class="firstCard">Because...</h2>
+              <p class="firstCard">
+                The future is now! Online health and fitness coaching is the
+                next big thing in exercise, nutrition, and wellness. With the
+                power of the Internet, everyone can have access to an online
+                health and fitness coach. Doesn’t matter if you’re old, ill,
+                injured, lazy, disabled, poor, weak, or scared to go outside.
+                You can get fit by using a online health and fitness coach.
+              </p>
+            </div>
+          </div>
+            <div class="face face2" id="home">
+            <h2>Why Sign In with us...?</h2>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <h2 class="secondCard">It is free!!</h2>
+              <p class="secondCard">
+                For limited time the access to our platform is 100% Free. What
+                are you waiting for..?
+              </p>
+            </div>
+          </div>
+          <div class="face face2">
+            <h2>How much will it cost?</h2>
+          </div>
+        </div>
+      </div>
+
+
+      <p id="text-second">
         As you settle into an active lifestyle, you’ll probably discover which
         foods give you the most energy and which have negative effects. The key
         is learning to listen to your body and balancing what feels right with
         what’s good for you.
-      </p> -->
+      </p>
     </section>
-    <section class="second-section">
-      <p id="text-second"></p>
-    </section>
+
+
     <section class="third-section">
+      <div class="containerBMI" class="flex-container">
+        <h1>BMI Calculator</h1>
+        <p>
+          Body mass index (BMI) is a measure of body fat based on height and
+          weight that applies to adult men and women.
+        </p>
+        <p>Height (in cm)</p>
+        <input type="text" id="height" placeholder="165" required*/>
+        <p>Weight (in kg)</p>
+        <input type="text" id="weight" placeholder="70" required*/>
+        <button id="btn">Calculate</button>
+        <p>You can have access to more tools like this after sign in</p>
+        <br />
+        <br />
+        <div id="result"></div>
+      </div>
       <p id="text-third">
         Eating a well-balanced diet can help you get the calories and nutrients
         you need to fuel your daily activities, including regular exercise. When
@@ -128,7 +181,18 @@
       </p>
     </section>
 
-    <footer></footer>
+    <footer>
+      <div class="footer">
+        <div id="button"></div>
+        <div id="container">
+          <div id="cont">
+            <div class="footer_center">
+              <h3>Classy footer text</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="./script_main.js"></script>
   </body>
 </html>
