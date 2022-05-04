@@ -6,6 +6,7 @@
   margin-top: 3%;
   border-radius: 2%;
   background-color: rgb(113, 180, 180);
+  viewport-fit: 1vh;
 }
 
 #audio {
