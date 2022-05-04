@@ -42,3 +42,25 @@ function calculateBMI() {
       result.innerHTML = `Please check your input values, BMI cannot be calculated. : <span>${bmi}</span>`;
   }
 }
+
+const axios = require("axios");
+
+const options = {
+  method: "POST",
+  url: "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
+  headers: {
+    "content-type": "text/plain",
+    "X-RapidAPI-Host": "mycookbook-io1.p.rapidapi.com",
+    "X-RapidAPI-Key": "fd9989ee8cmshc3a8aa8e2bfefb1p124755jsnc1459418779b",
+  },
+  data: "https://www.jamieoliver.com/recipes/vegetables-recipes/superfood-salad/",
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
