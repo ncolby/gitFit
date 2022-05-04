@@ -5,7 +5,10 @@ require("dotenv").config();
 
 const server = express();
 const client = new MongoClient(process.env.DB_CONNECTION_URL);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
+// serve up documents from the public folder
+server.use(express.static("./public"));
 
 // * Start of Auth0 implementation
 const { auth, requiresAuth } = require("express-openid-connect");
@@ -14,7 +17,7 @@ const config = {
     authRequired: false,
     auth0Logout: true,
     secret: process.env.AUTH_ZERO_SECRET,
-    baseURL: "http://localhost:3000",
+    baseURL: process.env.BASE_URL,
     clientID: process.env.AUTH_ZERO_CLIENT_ID,
     issuerBaseURL: "https://dev-kdrnv99d.us.auth0.com",
 };
