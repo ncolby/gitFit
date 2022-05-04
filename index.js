@@ -1,6 +1,7 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
+const path = require("path");
 require("dotenv").config();
 
 const server = express();
@@ -32,8 +33,13 @@ server.get("/profile", requiresAuth(), (req, res) => {
 
 // req.isAuthenticated is provided from the auth router
 server.get("/", (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
+    if (req.oidc.isAuthenticated()) {
+        return res.redirect("./users/main.html");
+    }
+    return res.sendFile(path.join(__dirname, "public/main.html"));
 });
+
+server.use("/users", express.static("./users"));
 
 client.connect().then(async () => {
     server.listen(PORT, () => {
