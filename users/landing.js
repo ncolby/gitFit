@@ -21,17 +21,32 @@ async function exerciseSearch() {
   let result = await fetch(`../workout/${exerciseSearchTerm}`)
     .then((response) => response.json())
     .then((data) => data);
-  if (!result) {
+  if (result.length === 0) {
     result = await fetch(`../workout/musclegroup/${exerciseSearchTerm}`)
       .then((response) => response.json())
       .then((data) => data);
   }
   //display results
+  console.log(result);
   displayData(result);
 }
 
 function displayData(data) {
+  let blah = document.getElementById("search-results-container");
   console.log(data);
+  let dataDisplay = "";
+  for (const exercise of data) {
+    dataDisplay += `<div class="card" style="width: 18rem;">
+    <img src="${exercise.photo}" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">${exercise.name}</h5>
+      <p class="card-text">${exercise.description}</p>
+      <a href="${exercise.video}" class="btn btn-primary">See video</a>
+    </div>
+  </div>`;
+  }
+  console.log(dataDisplay);
+  blah.innerHTML = dataDisplay;
 }
 
 // CONTAINER's
