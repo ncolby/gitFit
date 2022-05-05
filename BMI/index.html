@@ -1,59 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div id="audio">
-      <!-- <embed
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div id="audio">
+            <!-- <embed
       src="file:///C:/Users/seuna/Documents/Amazon_Personal/JS_Project/clone/gitFit/workout_Mang_Dakiwe.mp3"
       loop="true"
       autostart="true"
       width="2"
       height="0"
     /> -->
-      <audio
-        autoplay="true"
-        src="file:///C:/Users/seuna/Documents/Amazon_Personal/JS_Project/clone/gitFit/workout_Mang_Dakiwe.mp3"
-        controls
-      >
-        <p>
-          If you are reading this, it is because your browser does not support
-          the audio element.
-        </p>
-      </audio>
-    </div>
+            <audio autoplay="false" src="../workout_Mang_Dakiwe.mp3" controls>
+                <p>
+                    If you are reading this, it is because your browser does not
+                    support the audio element.
+                </p>
+            </audio>
+        </div>
 
-    <div id="bmi">
-      <h1>BMI Calculator</h1>
+        <div id="bmi">
+            <h1>BMI Calculator</h1>
 
-      <!-- Option for providing height 
+            <!-- Option for providing height 
             and weight to the user-->
-      <p>Height (in cm)</p>
+            <p>Height (in cm)</p>
 
-      <input type="text" id="height" placeholder="165" required* />
+            <input type="text" id="height" placeholder="165" required* />
 
-      <p>Weight (in kg)</p>
+            <p>Weight (in kg)</p>
 
-      <input type="text" id="weight" placeholder="70" required* />
+            <input type="text" id="weight" placeholder="70" required* />
 
-      <button id="btn">Calculate</button>
-      <br />
-      <br />
+            <button id="btn">Calculate</button>
+            <br />
+            <br />
 
-      <img
-        src="https://img.freepik.com/free-vector/man-body-mass-index-fitness-bmi-chart-with-male-silhouettes-scale_53562-7067.jpg?w=360"
-        width=""
-        alt=""
-      />
+            <img
+                src="https://img.freepik.com/free-vector/man-body-mass-index-fitness-bmi-chart-with-male-silhouettes-scale_53562-7067.jpg?w=360"
+                width=""
+                alt=""
+            />
 
-      <div id="result"></div>
-    </div>
+            <div id="result"></div>
+        </div>
 
-    <script src="script.js"></script>
-  </body>
+        <script src="script.js"></script>
+    </body>
 </html>
