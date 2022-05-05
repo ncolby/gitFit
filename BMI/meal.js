@@ -25,7 +25,7 @@ const createMeal = (meal) => {
 
   const newInnerHTML = `
 		<div class="row">
-			<div class="columns five">
+			<div class="">
 				<img src="${meal.strMealThumb}" alt="Meal Image">
 				${
           meal.strCategory
@@ -56,7 +56,7 @@ const createMeal = (meal) => {
 		<div class="row">
 			<h5>Video Recipe</h5>
 			<div class="videoWrapper">
-				<iframe width="420" height="315"
+				<iframe width="400" height="200"
 				src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}">
 				</iframe>
 			</div>
