@@ -10,13 +10,13 @@ body {
     background-size:auto;
     
 }
-
+/* BODY IS DIVIDED IN THREE MAIN SECTIONS ********************************************************************************/
 .first-section {
     top: 0px;
     width: 100%;
     height: 550px;
 }    
-
+/* SECTION 1***************************************************/
 #text-first {
     color: white;
     font-family: Montserrat;
@@ -31,13 +31,14 @@ body {
     border-radius: 5% 5% 5% 5%;
 }
 
+/* SECOND BLOCK OF TEXT IN SECTION 1******************************/
 #text-first-continuation {
     color: white;
     text-align: justify;
     font-family: Montserrat;
     font-size: 18px;
     position: relative;
-    top: 150px;
+    top: 170px;
     margin-left: 600px;
     margin-right: 20px;
     padding-left: 5px;
@@ -46,7 +47,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5% 5% 5% 5%;
 }
-
+/* SECTION 2*****************************************************/
 .second-section{
     background-image: url("https://wallpapertag.com/wallpaper/full/7/0/4/63855-white-background-hd-1920x1080-download-free.jpg");
     font-weight: 600;
@@ -54,8 +55,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 800px;
-    border-radius:  0%  50% 0%  50%;
+    height: 750px;
+    border-radius:  0%  50% 0%  25%;
 }
 
 #text-second {
@@ -74,6 +75,7 @@ body {
     border-radius: 5% 5% 5% 5%;
 }
 
+/* SECTION 3*****************************************************/
 .third-section {
     background-image: url("https://wallpapercave.com/wp/wp3173151.jpg");
     background-position: center;
@@ -92,7 +94,8 @@ body {
     font-family: Montserrat;
     font-size:18px;
     position: relative;
-    top: 0px;
+    top: -10%;
+    bottom: 20px;
     
     margin-left: 500px;
     margin-right: 50px;
@@ -103,22 +106,20 @@ body {
     border-radius: 5% 5% 5% 5%; 
 }
 
-/* NAV BAR */
+/* NAVIGATION BAR AT TOP OF THE MAIN PAGE ****************************************************************************/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    background-color: #f5f5f5;
-    font-family: arial;
-}
+
 header {
     background: #ff9711;
     width: 100%;
     float: left;
     box-shadow: 0px 0px 15px #777;
 }
+
 .wrapper {
     max-width: 1200px;
     padding: 0px 20px;
@@ -130,9 +131,8 @@ header {
     min-height: 100px;
     display: flex;
     align-items: center;
-   
-    
 }
+
 .nav-menus li {
     list-style: none;
     position: relative;
@@ -140,6 +140,7 @@ header {
     text-decoration: none;
    
 }
+
 .nav-menus a {
     color: black;
     position: relative;
@@ -148,12 +149,8 @@ header {
     padding: 15px 12px;
     z-index: 1;
 }
-.nav-menus li:hover {
-    color: white;
-    
-   
-   
-}
+
+/* EFECT WHEN HOVER OVER WORKOUTS MENU AND TEAM *****************/
 .nav-menus a:after {
     content: "";
     width: 100%;
@@ -167,31 +164,13 @@ header {
     z-index: -1;
     text-decoration: none;
 }
+
 .nav-menus li:hover > a:after{
     height: 100%;
     text-decoration: none;
 }
-.nav-menus i{
-    margin-right: 8px;
-    font-size: 16px;
-    color: black;
-}
-.toggle-btn{
-    float: right;
-    height: 90px;
-    line-height: 90px;
-    color: white;
-    font-size: 26px;
-    display: none;
-    cursor: pointer;
-    text-decoration: none;
-}
-.nav-menus.active{
-    display: block;
-    text-decoration: none;
-}
 
-/*-- Sub Menus --*/
+/* HIDE AND SHOW SUBMENUS ****************************************/
 .sub-menus ul {
     position: absolute;
     top: 80px;
@@ -246,7 +225,7 @@ header {
     top: 300px;
     left: 300px;
     min-height: 100vh;
-    background-color: #a9c9ff;
+   
 }
 
 .container {
@@ -265,7 +244,6 @@ header {
     height: 400px;
     left: 10px;
     margin: 0 auto;
-    background: #000;
     border-radius: 15px;
     padding-left: 0;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
@@ -296,7 +274,7 @@ h2 {
   
 .firstCard {
     font-family: Montserrat;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     background-color: #090909;
     -webkit-background-clip: text;
@@ -305,7 +283,7 @@ h2 {
   
 .secondCard {
     font-family: Montserrat;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     background-color: black;
     -webkit-background-clip: text;
@@ -322,12 +300,13 @@ h2 {
     padding: 0;
     font-size: 1;
     color: black;
-    transition: 0.5s;
+    transition: 0.8s;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     z-index: 10;
 }
   
 .card:hover .face.face2 {
+    cursor: pointer;
     height: 60px;
 }
 
@@ -355,7 +334,7 @@ h2 {
     border-radius: 5px;
 }
      
-    /*FOOTER */
+/*FOOTER *************************************************************************************************************/
 section{
     text-align:center;
 }
@@ -386,7 +365,7 @@ section{
     position:relative;
 }
 
-.footer {
+.footer  {
     bottom:0;
     left:0;
     position:fixed;
@@ -403,6 +382,7 @@ section{
 }
 
 .footer:hover {
+    cursor: pointer;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -440,15 +420,33 @@ section{
     font-family: 'Montserrat';
     font-size: 30px;
     font-weight: 100;
-    margin-top:70px;
+    margin-top:45px;
     margin-left:40px;
 }
-  
-      /* BMI CALCULATOR */
+
+.container2 p, .first a:hover {
+    color: black;
+}
+
+.container2 p, .second a:hover {
+    color: black;
+}
+
+.first a, .second a{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+
+
+
+/* BMI CALCULATOR ****************************************************************************************************/
 
 .containerBMI, .flex-container{
     font-family: Montserrat;
-    font-size: 12px;
+    font-size: 14px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -459,5 +457,133 @@ section{
     top: 100px;
     box-shadow: 10px white;
     border: 2px #FF9711 solid;
-    background-color: #ff9711
+    background-color: #ff9711;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+/* ANIMATION AFTER BMI CALCULATOR**************************/
+#atext {
+    position: relative;
+    display: flex;
+    /* flex-direction: column; */
+    text-align: center;
+    font-family: "Monserrat";
+    left: 1px;
+    margin-top: 1px;
+    font-weight: bold;
+    padding-top: 2px;
+    text-decoration: none;
+    border-radius: 50%;
+    animation: animate 2s ease-in-out infinite;
+}
+
+@keyframes animate {
+    50% {
+        transform: translateY(20px);
+        
+    }
+}
+
+/* SIGN IN FORM************************************************************************************************************/
+form{
+    height: 140px;
+    width: 300px;
+    background-color: rgba(255,151,17);
+    position: relative;
+    transform: translate(-50%,-50%);
+    top: -43%;
+    left: 66%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid white;
+    box-shadow:  40px rgba(255,151,17.0.5);
+    padding: 50px 35px;
+}
+
+form *{
+    font-family: 'Montserrat';
+    color: black;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+ 
+}
+
+form h2{
+    font-weight: 500;
+    line-height: 10px;
+    text-align: center;
+}
+
+#formtitle {
+    font-size: 28px;
+    font-family: 'Montserrat';
+    text-shadow: 100px rgba(255,255,255, 0.5);
+}
+
+label{
+    display: block;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: rgba(255,255,255, 0.7);
+    border: 2px solid  rgba(255,255,255, 0.7);
+    border-radius: 50px;
+}
+
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,151,17,0.3);
+    border-radius: 3px;
+    padding: 0 15px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder{
+    color: #e5e5e5;
+}
+
+button, #button{
+    font-family: 'Montserrat';
+    margin-top: 28px;
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+    padding: 5px ;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+
+.social div{
+  width: 100%;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: rgba(255,151,17,0.7);
+  color: #eaf0fb;
+  text-align: center;
+  font-size: 14px;
+}
+
+.social div:hover{
+  background-color: rgba(255,151,17,0.3);
+}
+
+#username, #password {
+    font-size: 14px;
+}
+
+.go {
+    cursor: pointer;
 }
