@@ -32,7 +32,6 @@ server.use(auth(config));
 
 server.use(cors());
 
-
 server.get("/profile", requiresAuth(), (req, res) => {
     res.send(req.oidc.user);
 });
@@ -41,7 +40,7 @@ server.get("/profile", requiresAuth(), (req, res) => {
 // req.isAuthenticated is provided from the auth router
 server.get("/", (req, res) => {
     if (req.oidc.isAuthenticated()) {
-        return res.redirect("./users/main.html");
+        return res.redirect("./users/landing.html");
     }
     return res.sendFile(path.join(__dirname, "public/main.html"));
 });
@@ -49,65 +48,65 @@ server.get("/", (req, res) => {
 server.use("/users", requiresAuth, express.static("./users"));
 
 client.connect().then(async () => {
-  server.listen(PORT, () => {
-    console.log("Server listening...");
-  });
+    server.listen(PORT, () => {
+        console.log("Server listening...");
+    });
 
-  // workouts.insertOne({
-  //   name: "sit-ups",
-  //   groups: [
-  //     "rectus abdominis",
-  //     "obliques",
-  //     "hip flexors",
-  //     "chest",
-  //     "neck",
-  //     "core",
-  //   ],
-  //   description:
-  //     "A physical exercise designed to strengthen the abdominal muscles, in which a person sits up from a supine position without using the arms for leverage.",
-  //   video: "https://www.youtube.com/watch?v=jDwoBqPH0jk",
-  //   photo:
-  //     "https://img2.thejournal.ie/article/1773996/river?version=1774226&width=1340",
-  // });
+    // workouts.insertOne({
+    //   name: "sit-ups",
+    //   groups: [
+    //     "rectus abdominis",
+    //     "obliques",
+    //     "hip flexors",
+    //     "chest",
+    //     "neck",
+    //     "core",
+    //   ],
+    //   description:
+    //     "A physical exercise designed to strengthen the abdominal muscles, in which a person sits up from a supine position without using the arms for leverage.",
+    //   video: "https://www.youtube.com/watch?v=jDwoBqPH0jk",
+    //   photo:
+    //     "https://img2.thejournal.ie/article/1773996/river?version=1774226&width=1340",
+    // });
 });
 
 server.get("/workouts", async (req, res, next) => {
-  console.log("got to first line");
-  const db = client.db("gitFitDB");
-  const workouts = db.collection("linksNthings");
-  const allWorkouts = await workouts.find().toArray();
-  // console.log(allWorkouts);
-  res.send(allWorkouts);
+    console.log("got to first line");
+    const db = client.db("gitFitDB");
+    const workouts = db.collection("linksNthings");
+    const allWorkouts = await workouts.find().toArray();
+    // console.log(allWorkouts);
+    res.send(allWorkouts);
 });
 
 server.get("/workout/:name", async (req, res, next) => {
-  console.log("route hit");
-  const db = client.db("gitFitDB");
-  const workouts = db.collection("linksNthings");
-  const { name } = req.params;
-  console.log("this is the name", name);
-  if (name) {
-    console.log("first conditional hit");
-    const workoutRes = await workouts.find({ name: name }).toArray();
-    if (workoutRes) {
-      return res.status(200).send(workoutRes);
+    console.log("route hit");
+    const db = client.db("gitFitDB");
+    const workouts = db.collection("linksNthings");
+    const { name } = req.params;
+    console.log("this is the name", name);
+    if (name) {
+        console.log("first conditional hit");
+        const workoutRes = await workouts.find({ name: name }).toArray();
+        if (workoutRes) {
+            return res.status(200).send(workoutRes);
+        }
+        return res
+            .status(404)
+            .send({ error: `workout with name ${name} not found` });
     }
-    return res
-      .status(404)
-      .send({ error: `workout with name ${name} not found` });
-  }
 });
 
 server.get("/workout/musclegroup/:musclegroup", async (req, res, next) => {
-  console.log("muscle group hit");
-  const db = client.db("gitFitDB");
-  const workouts = db.collection("linksNthings");
-  const { musclegroup } = req.params;
-  if (musclegroup) {
-    console.log("first check hit");
-    const groupRes = await workouts.find({ groups: musclegroup }).toArray();
-    if (groupRes) {
-      return res.status(200).send(groupRes);
+    console.log("muscle group hit");
+    const db = client.db("gitFitDB");
+    const workouts = db.collection("linksNthings");
+    const { musclegroup } = req.params;
+    if (musclegroup) {
+        console.log("first check hit");
+        const groupRes = await workouts.find({ groups: musclegroup }).toArray();
+        if (groupRes) {
+            return res.status(200).send(groupRes);
+        }
     }
-  }
 });
