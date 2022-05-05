@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
+const {MongoClient} = require("mongodb");
 const mongoose = require("mongoose");
 
 const path = require("path");
@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 server.use(express.static("./public"));
 
 // * Start of Auth0 implementation
-const { auth, requiresAuth } = require("express-openid-connect");
+const {auth, requiresAuth} = require("express-openid-connect");
 
 const config = {
   authRequired: false,
@@ -45,7 +45,7 @@ server.get("/", (req, res) => {
   return res.sendFile(path.join(__dirname, "public/main.html"));
 });
 
-server.use("/users", express.static("./users"));
+server.use("/users", requiresAuth(), express.static("./users"));
 
 client.connect().then(async () => {
   server.listen(PORT, () => {
@@ -83,17 +83,15 @@ server.get("/workout/:name", async (req, res, next) => {
   console.log("route hit");
   const db = client.db("gitFitDB");
   const workouts = db.collection("linksNthings");
-  const { name } = req.params;
+  const {name} = req.params;
   console.log("this is the name", name);
   if (name) {
     console.log("first conditional hit");
-    const workoutRes = await workouts.find({ name: name }).toArray();
+    const workoutRes = await workouts.find({name: name}).toArray();
     if (workoutRes) {
       return res.status(200).send(workoutRes);
     }
-    return res
-      .status(404)
-      .send({ error: `workout with name ${name} not found` });
+    return res.status(404).send({error: `workout with name ${name} not found`});
   }
 });
 
@@ -101,10 +99,10 @@ server.get("/workout/musclegroup/:musclegroup", async (req, res, next) => {
   console.log("muscle group hit");
   const db = client.db("gitFitDB");
   const workouts = db.collection("linksNthings");
-  const { musclegroup } = req.params;
+  const {musclegroup} = req.params;
   if (musclegroup) {
     console.log("first check hit");
-    const groupRes = await workouts.find({ groups: musclegroup }).toArray();
+    const groupRes = await workouts.find({groups: musclegroup}).toArray();
     if (groupRes) {
       return res.status(200).send(groupRes);
     }
